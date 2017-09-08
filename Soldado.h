@@ -5,7 +5,7 @@
 using namespace std;
 
 class Soldado{
-	private:
+	protected:
 		string Nombre;
 		string Ciudad;
 		int Edad;
@@ -18,8 +18,8 @@ class Soldado{
 		string getCiudad();
 		void setEdad(int);
 		int getEdad();
-		int Ataque();
-		int Defensa();
+		virtual int Ataque();
+		virtual int Defensa();
 		~Soldado();
 	
 };
