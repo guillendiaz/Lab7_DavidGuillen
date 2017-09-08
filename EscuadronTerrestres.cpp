@@ -49,16 +49,16 @@ Soldado* EscuadronTerrestres::getSoldado(int n){
 	return NULL;
 }
 
-int EscuadronTerrestres::Ataque(){
-	int RetAtaque;
+double EscuadronTerrestres::Ataque(){
+	double RetAtaque;
 	for (int i = 0; i < Soldados.size()-1; ++i){
 		RetAtaque+= Soldados.at(i)->Ataque();
 	}
 	return RetAtaque;
 }
 
-int EscuadronTerrestres::Defensa(){
-	int RetDefensa;
+double EscuadronTerrestres::Defensa(){
+	double RetDefensa;
 	for (int i = 0; i < Soldados.size()-1; ++i){
 		RetDefensa+= Soldados.at(i)->Defensa();
 	}

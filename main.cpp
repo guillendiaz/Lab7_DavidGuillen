@@ -20,7 +20,7 @@ int main(int argc, char const *argv[]){
 	do{
 		switch(opcion=Menu()){
 			case 1:{
-					if (Escuadrones.size() != 4){
+					if (Escuadrones.size()-1 != 4){
 						string Nombre;
 						cout<<"Ingrese Nombre del Escuadron Terrestre: ";
 						cin>>Nombre;
@@ -121,7 +121,7 @@ int main(int argc, char const *argv[]){
 							cout<<"Eliga el numero del Escuadron al cual asignar el Soldado"<<endl;
 							cin>>NumSol;
 							if (CapDesa< 0 || CapDesa> 10){
-								Soldado* NuevoSol = new AsesinoOculto(Nombre, Ciudad, Edad, NumAse, CapDesa);
+								Soldado *NuevoSol = new AsesinoOculto(Nombre, Ciudad, Edad, NumAse, CapDesa);
 								Escuadrones.at(NumSol).addSoldado(NuevoSol);
 							}else{
 								cout<<"Capacidad para pasar Desapercibido No cumple Con el rango";
@@ -137,20 +137,29 @@ int main(int argc, char const *argv[]){
 				string bando, tipo;
 				for (int i = 0; i < Escuadrones.size()-1; ++i){
 						cout<<i<<". "<<Escuadrones.at(i).getNombre()<<endl;
-						cout<<"Elija Bando del Escuadron[1/2]: "
+						cout<<"Elija Bando del Escuadron[1/2]: ";
 						cin>>bando;
 						cout<<endl;
 						Escuadrones.at(i).setBando(bando);
 				}
 				for (int i = 0; i < Escuadrones.size()-1; ++i){
 						cout<<i<<". "<<Escuadrones.at(i).getNombre()<<endl;
-						cout<<"Elija Tipo del Escuadron[Retaguardia/Frontal]: "
+						cout<<"Elija Tipo del Escuadron[Retaguardia/Frontal]: ";
 						cin>>tipo;
 						cout<<endl;
 						Escuadrones.at(i).setTipo(bando);
 				}
 				cout<<"Inicio de Simulacion"<<endl;
-				
+				for (int i = 0; i < Escuadrones.size()-1; ++i){
+					for (int j = 0; j < Escuadrones.size()-1; ++j){
+						if ((Escuadrones.at(i).getBando() == "1" &&  Escuadrones.at(i).getTipo() == "Retaguardia") && (Escuadrones.at(j).getBando() == "2" && Escuadrones.at(i).getTipo() == "Frontal")){
+							if (Escuadrones.at(i).Ataque() > Escuadrones.at(j).Defensa() * 10){
+								cout<<"Ataque"<<endl;
+								cout<<Escuadrones.at(i).Ataque()<<".."<<Escuadrones.at(j).Ataque()<<endl;
+							}
+						}
+					}
+				}
 
 			}
 			break;

@@ -29,11 +29,11 @@ int AsesinoOculto::getCapDesapercibido(){
 	return CapDesapercibido;
 }
 
-int AsesinoOculto::Ataque(){
+double AsesinoOculto::Ataque(){
 	return NumAsesinatos;
 }
 
-int AsesinoOculto::Defensa(){
+double AsesinoOculto::Defensa(){
 	return CapDesapercibido * 10;
 }
 

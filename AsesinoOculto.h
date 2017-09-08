@@ -1,5 +1,5 @@
-#ifndef ARQUERO_H
-#define ARQUERO_H
+#ifndef ASESINOOCULTO_H
+#define ASESINOOCULTO_H
 #include "Soldado.h"
 #include <string>
 
@@ -17,8 +17,8 @@ class AsesinoOculto : public Soldado{
 		int getNumAsesinatos();
 		void setCapDesapercibido(int);
 		int getCapDesapercibido();
-		int Ataque();
-		int Defensa();
+		double Ataque();
+		double Defensa();
 		~AsesinoOculto();
 	
 };

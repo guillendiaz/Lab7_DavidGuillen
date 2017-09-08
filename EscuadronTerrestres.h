@@ -22,8 +22,8 @@ class EscuadronTerrestres{
 		string getTipo();
 		void addSoldado(Soldado*);
 		Soldado* getSoldado(int);
-		int Ataque();
-		int Defensa();
+		double Ataque();
+		double Defensa();
 		~EscuadronTerrestres();
 };
 

@@ -35,11 +35,11 @@ int Soldado::getEdad(){
 	return Edad;
 }
 
-int Soldado::Ataque(){
+double Soldado::Ataque(){
 
 }
 
-int Soldado::Defensa(){
+double Soldado::Defensa(){
 
 }
 

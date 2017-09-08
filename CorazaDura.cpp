@@ -29,11 +29,11 @@ int CorazaDura::getNumLanza(){
 	return NumLanza;
 }
 
-int CorazaDura::Ataque(){
+double CorazaDura::Ataque(){
 	return NumLanza;
 }
 
-int CorazaDura::Defensa(){
+double CorazaDura::Defensa(){
 	return Dureza;
 }
 

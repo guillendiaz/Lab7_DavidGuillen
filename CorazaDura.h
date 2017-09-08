@@ -17,8 +17,8 @@ class CorazaDura : public Soldado{
 		int getDureza();
 		void setNumLanza(int);
 		int getNumLanza();
-		int Ataque();
-		int Defensa();
+		double Ataque();
+		double Defensa();
 		~CorazaDura();
 	
 };

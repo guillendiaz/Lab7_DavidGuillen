@@ -29,11 +29,11 @@ int Arquero::getPrecision(){
 	return Precision;
 }
 
-int Arquero::Ataque(){
+double Arquero::Ataque(){
 	return NumFlechas * (Precision / 1000);
 }
 
-int Arquero::Defensa(){
+double Arquero::Defensa(){
 	return 0;
 }
 

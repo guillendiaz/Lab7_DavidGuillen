@@ -18,8 +18,8 @@ class Soldado{
 		string getCiudad();
 		void setEdad(int);
 		int getEdad();
-		virtual int Ataque();
-		virtual int Defensa();
+		virtual double Ataque();
+		virtual double Defensa();
 		~Soldado();
 	
 };
