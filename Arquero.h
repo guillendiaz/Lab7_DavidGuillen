@@ -7,16 +7,16 @@ using namespace std;
 
 class Arquero : public Soldado{
 	private:
-		int NumFlechas;
-		int Precision;
+		double NumFlechas;
+		double Precision;
 
 	public:
 		Arquero();
-		Arquero(string, string, int, int, int);
-		void setNumFlechas(int);
-		int getNumFlechas();
-		void setPrecision(int);
-		int getPrecision();
+		Arquero(string, string, int, double, double);
+		void setNumFlechas(double);
+		double getNumFlechas();
+		void setPrecision(double);
+		double getPrecision();
 		double Ataque();
 		double Defensa();
 		~Arquero();

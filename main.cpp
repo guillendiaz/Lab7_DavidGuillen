@@ -54,7 +54,7 @@ int main(int argc, char const *argv[]){
 							cout<<"Ingrese Precisión del Arquero: ";
 							cin>>Precision;
 							cout<<endl;
-							for (int i = 0; i < Escuadrones.size()-1; ++i){
+							for (int i = 0; i <= Escuadrones.size()-1; ++i){
 								cout<<i<<". "<<Escuadrones.at(i).getNombre()<<endl;
 							}
 							cout<<"Eliga el numero del Escuadron al cual asignar el Soldado"<<endl;
@@ -82,7 +82,7 @@ int main(int argc, char const *argv[]){
 							cout<<"Ingrese Numero de Lanzas del Coraza Dura: ";
 							cin>>NumLanza;
 							cout<<endl;
-							for (int i = 0; i < Escuadrones.size()-1; ++i){
+							for (int i = 0; i <= Escuadrones.size()-1; ++i){
 								cout<<i<<". "<<Escuadrones.at(i).getNombre()<<endl;
 							}
 							cout<<"Eliga el numero del Escuadron al cual asignar el Soldado"<<endl;
@@ -115,7 +115,7 @@ int main(int argc, char const *argv[]){
 							cout<<"Ingrese Capacidad para pasar Desapercibido del Asesino Oculto: ";
 							cin>>CapDesa;
 							cout<<endl;
-							for (int i = 0; i < Escuadrones.size()-1; ++i){
+							for (int i = 0; i <= Escuadrones.size()-1; ++i){
 								cout<<i<<". "<<Escuadrones.at(i).getNombre()<<endl;
 							}
 							cout<<"Eliga el numero del Escuadron al cual asignar el Soldado"<<endl;
@@ -135,28 +135,39 @@ int main(int argc, char const *argv[]){
 				break;
 			case 3:{
 				string bando, tipo;
-				for (int i = 0; i < Escuadrones.size()-1; ++i){
+				for (int i = 0; i <= Escuadrones.size()-1; ++i){
 						cout<<i<<". "<<Escuadrones.at(i).getNombre()<<endl;
 						cout<<"Elija Bando del Escuadron[1/2]: ";
 						cin>>bando;
-						cout<<endl;
 						Escuadrones.at(i).setBando(bando);
 				}
-				for (int i = 0; i < Escuadrones.size()-1; ++i){
+				for (int i = 0; i <= Escuadrones.size()-1; ++i){
 						cout<<i<<". "<<Escuadrones.at(i).getNombre()<<endl;
 						cout<<"Elija Tipo del Escuadron[Retaguardia/Frontal]: ";
 						cin>>tipo;
 						cout<<endl;
 						Escuadrones.at(i).setTipo(bando);
 				}
+				cout<<Escuadrones.at(0).getTipo()<<endl;
 				cout<<"Inicio de Simulacion"<<endl;
-				for (int i = 0; i < Escuadrones.size()-1; ++i){
-					for (int j = 0; j < Escuadrones.size()-1; ++j){
-						if ((Escuadrones.at(i).getBando() == "1" &&  Escuadrones.at(i).getTipo() == "Retaguardia") && (Escuadrones.at(j).getBando() == "2" && Escuadrones.at(i).getTipo() == "Frontal")){
+				for (int i = 0; i <= Escuadrones.size()-1; ++i){
+					for (int j = 0; j <= Escuadrones.size()-1; ++j){
+						if (((Escuadrones.at(i).getBando()).compare("1") == 1 ||  (Escuadrones.at(i).getTipo()).compare("Retaguardia") == 1) && ((Escuadrones.at(j).getBando()).compare("2") == 1 || (Escuadrones.at(i).getTipo()).compare("Frontal") == 1)){
+							
 							if (Escuadrones.at(i).Ataque() > Escuadrones.at(j).Defensa() * 10){
-								cout<<"Ataque"<<endl;
 								cout<<Escuadrones.at(i).Ataque()<<".."<<Escuadrones.at(j).Ataque()<<endl;
+								cout<<"Gana Bando 1"<<endl;
+								break;
 							}
+						}else if ((Escuadrones.at(i).getBando() == "2" ||  Escuadrones.at(i).getTipo() == "Retaguardia") && (Escuadrones.at(j).getBando() == "1" || Escuadrones.at(i).getTipo() == "Frontal")){
+							if (Escuadrones.at(i).Ataque() > Escuadrones.at(j).Defensa() * 10){
+								cout<<Escuadrones.at(i).Ataque()<<".."<<Escuadrones.at(j).Ataque()<<endl;
+								cout<<"Gana Bando 2"<<endl;
+								break;
+							}
+						}else{
+							cout<<"Quedo Empate"<<endl;
+							break;
 						}
 					}
 				}

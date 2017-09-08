@@ -1,11 +1,12 @@
 #include "Arquero.h"
 #include "Soldado.h"
-
+#include <iostream>
+using namespace std;
 Arquero::Arquero(){
 
 }
 
-Arquero::Arquero(string pNombre, string pCiudad, int pEdad, int pNumFlechas, int pPrecision){
+Arquero::Arquero(string pNombre, string pCiudad, int pEdad, double pNumFlechas, double pPrecision){
 	this->Nombre = pNombre;
 	this->Ciudad = pCiudad;
 	this->Edad = pEdad;
@@ -13,24 +14,24 @@ Arquero::Arquero(string pNombre, string pCiudad, int pEdad, int pNumFlechas, int
 	this->Precision = pPrecision;
 }
 
-void Arquero::setNumFlechas(int pNumFlechas){
+void Arquero::setNumFlechas(double pNumFlechas){
 	this->NumFlechas = pNumFlechas;
 }
 
-int Arquero::getNumFlechas(){
+double Arquero::getNumFlechas(){
 	return NumFlechas;
 }
 
-void Arquero::setPrecision(int pPrecision){
+void Arquero::setPrecision(double pPrecision){
 	this->Precision = pPrecision;
 }
 
-int Arquero::getPrecision(){
+double Arquero::getPrecision(){
 	return Precision;
 }
 
 double Arquero::Ataque(){
-	return NumFlechas * (Precision / 1000);
+	return NumFlechas *(Precision / 1000.0);
 }
 
 double Arquero::Defensa(){

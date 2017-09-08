@@ -2,6 +2,7 @@
 #include "Soldado.h"
 #include <vector>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -50,16 +51,16 @@ Soldado* EscuadronTerrestres::getSoldado(int n){
 }
 
 double EscuadronTerrestres::Ataque(){
-	double RetAtaque;
-	for (int i = 0; i < Soldados.size()-1; ++i){
+	double RetAtaque=0;
+	for (int i = 0; i <= Soldados.size()-1; ++i){
 		RetAtaque+= Soldados.at(i)->Ataque();
 	}
 	return RetAtaque;
 }
 
 double EscuadronTerrestres::Defensa(){
-	double RetDefensa;
-	for (int i = 0; i < Soldados.size()-1; ++i){
+	double RetDefensa=0;
+	for (int i = 0; i <= Soldados.size()-1; ++i){
 		RetDefensa+= Soldados.at(i)->Defensa();
 	}
 	return RetDefensa;

@@ -1,6 +1,7 @@
 #include "Soldado.h"
 #include <string>
-
+#include <iostream>
+using namespace std;
 Soldado::Soldado(){
 
 }
@@ -33,14 +34,6 @@ void Soldado::setEdad(int pEdad){
 
 int Soldado::getEdad(){
 	return Edad;
-}
-
-double Soldado::Ataque(){
-
-}
-
-double Soldado::Defensa(){
-
 }
 
 Soldado::~Soldado(){
