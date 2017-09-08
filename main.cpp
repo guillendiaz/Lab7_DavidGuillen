@@ -20,15 +20,15 @@ int main(int argc, char const *argv[]){
 	do{
 		switch(opcion=Menu()){
 			case 1:{
-					if (Escuadrones.size()-1 != 4){
+					if (Escuadrones.size() > 4){
+						cout<<"Se a alcanzado el maximo de Escuadrones"<<endl;
+					}else{
 						string Nombre;
 						cout<<"Ingrese Nombre del Escuadron Terrestre: ";
 						cin>>Nombre;
 						cout<<endl;
 						EscuadronTerrestres NuevoEscTerre(Nombre);
 						Escuadrones.push_back(NuevoEscTerre);
-					}else{
-						cout<<"Se a alcanzado el maximo de Escuadrones"<<endl;
 					}
 				}
 				break;
